@@ -1,0 +1,37 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+.venv/
+
+# Archivos de compilación Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración locales
+*.env
+*.ini
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de dependencias
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Archivos de Jupyter
+.ipynb_checkpoints/
+
+# Descargas y datasets
+datasets/*.xlsx
+datasets/*.csv
+
+# Archivos temporales
+*.tmp
+*.swp
