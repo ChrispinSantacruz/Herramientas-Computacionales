@@ -5,31 +5,40 @@
 
 ---
 
-## 📌 Descripción del proyecto
+## Descripción del proyecto
 
-Este proyecto implementa un script en **Python** con **Selenium** para automatizar la descarga de un archivo Excel desde el portal oficial de [datos.gov.co](https://www.datos.gov.co/).  
+Este proyecto implementa un script en **Python** utilizando la librería **Selenium** para automatizar la descarga de un archivo Excel desde el portal oficial de [datos.gov.co](https://www.datos.gov.co/).  
 
-El script abre el navegador, navega hasta el dataset **"Inventario de activos de información de la Subred Sur Occidente 2025"**, y descarga automáticamente el archivo **Excel** en la carpeta `datasets`.
+El programa abre un navegador de manera controlada, navega hacia el dataset **"Inventario de activos de información de la Subred Sur Occidente 2025"**, y descarga automáticamente el archivo Excel en la carpeta `datasets`.  
 
----
-
-## 🚀 Tecnologías utilizadas
-- Python 3.11  
-- Selenium  
-- Chrome WebDriver  
+De esta forma, se demuestra el uso de Selenium para la interacción con sitios web que requieren clics, navegación y renderizado dinámico de elementos HTML.
 
 ---
 
-## 📑 Comparativa: Scrapy vs Selenium
+## Tecnologías utilizadas
 
-A continuación se presenta un cuadro comparativo entre **Scrapy** y **Selenium**, destacando al menos **3 ventajas y 3 desventajas de cada herramienta**:
-
-| Herramienta | Ventajas | Desventajas |
-|-------------|----------|-------------|
-| **Scrapy** | ⚡ **Alta velocidad**: muy eficiente para scraping masivo de múltiples páginas.<br>📂 **Gestión de datos estructurados**: maneja bien HTML, JSON, XML y exporta a CSV/JSON fácilmente.<br>🕷️ **Ideal para crawling a gran escala**: permite recorrer sitios completos con facilidad. | ❌ **Difícil manejo de JavaScript**: no interactúa fácilmente con páginas dinámicas.<br>❌ **Curva de aprendizaje**: requiere configurar spiders, pipelines y middlewares.<br>❌ **Bloqueos frecuentes**: algunos sitios lo detectan y bloquean. |
-| **Selenium** | 🖱️ **Interacción real**: permite hacer clic en botones, llenar formularios y desplazarse en la página.<br>🌐 **Soporte para JavaScript**: renderiza el DOM igual que un usuario humano.<br>📥 **Automatización flexible**: útil para descargar archivos, probar interfaces y scraping dinámico. | 🐢 **Lentitud relativa**: mucho más lento que Scrapy al navegar múltiples páginas.<br>💻 **Alto consumo de recursos**: requiere abrir navegador real o en modo headless.<br>🔗 **No óptimo para scraping masivo**: menos eficiente para recorrer sitios muy grandes. |
+- **Python 3.11**  
+- **Selenium** (para la automatización del navegador)  
+- **Chrome WebDriver** (para controlar Google Chrome)  
 
 ---
 
-## 📂 Estructura del proyecto
+## Comparativa entre Scrapy y Selenium
+
+A continuación, se presenta un cuadro comparativo entre **Scrapy** y **Selenium**, mencionando al menos 3 ventajas y 3 desventajas de cada herramienta, pero ampliado con más características relevantes:
+
+| Criterio | Scrapy | Selenium |
+|----------|--------|----------|
+| **Velocidad de scraping** | Muy alta, diseñado para scraping masivo y concurrente. | Baja, depende de abrir un navegador real o simulado. |
+| **Manejo de JavaScript** | Limitado; necesita librerías externas como Splash o Playwright. | Excelente, renderiza páginas dinámicas como un usuario real. |
+| **Interacción con la página** | Solo extrae datos; no interactúa con botones o formularios. | Puede interactuar con formularios, botones, scroll y eventos. |
+| **Escalabilidad** | Muy escalable, soporta crawling de miles de páginas en poco tiempo. | Poco escalable, se vuelve lento y consume muchos recursos con grandes volúmenes. |
+| **Consumo de recursos** | Muy bajo, no necesita navegador gráfico. | Alto, requiere levantar navegador (aunque existe el modo headless). |
+| **Curva de aprendizaje** | Media a alta; requiere aprender spiders, pipelines y middlewares. | Baja a media; más intuitivo para tareas simples de automatización. |
+| **Extracción de datos estructurados** | Muy eficiente; permite exportar directamente a CSV, JSON, XML. | Posible, pero se debe programar manualmente la exportación. |
+| **Uso en pruebas de software** | No está diseñado para testing de interfaces. | Muy usado para pruebas funcionales de aplicaciones web. |
+| **Manejo de bloqueos** | Fácil de detectar por servidores, requiere proxys y rotación de agentes. | Menos detectable porque simula un usuario real, aunque también puede ser bloqueado. |
+| **Instalación y configuración** | Requiere instalación de Scrapy y conocimientos de su arquitectura. | Requiere instalación del WebDriver correspondiente al navegador. |
+| **Casos de uso ideales** | Scraping masivo de sitios estáticos o con datos estructurados. | Scraping de sitios dinámicos, descargas automatizadas, pruebas de interfaz. |
+| **Limitaciones principales** | No maneja bien páginas con mucho JavaScript. | Lentitud y consumo excesivo de recursos en scraping a gran escala. |
 
